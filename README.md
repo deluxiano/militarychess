@@ -39,6 +39,7 @@ Each piece has a specific role and movement ability:
 | 10  | 地雷    | MINE         |
 
 
+
 ## Setting Up
 
 Each player arranges their 25 pieces on their side of the board at the beginning of the game. Strategic placement of pieces like the Flag and Landmines is crucial.
