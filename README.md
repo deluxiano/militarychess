@@ -24,19 +24,19 @@ Each piece has a specific role and movement ability:
 - **Landmine**: Does not move; destroys any attacking piece except for the Engineer.
 - **Flag**: The game's objective; capturing the flag wins the game.
 | ID  | Chinese | English      |
-|-----|---------|--------------|
-| -1  | 炸彈    | BOMB         |
-| 0   | 軍旗    | FLAG         |
-| 1   | 工兵    | ENG          |
-| 2   | 排長    | LT           |
-| 3   | 連長    | CPT          |
-| 4   | 營長    | MAJ          |
-| 5   | 團長    | COL          |
-| 6   | 旅長    | BG           |
-| 7   | 師長    | MG           |
-| 8   | 軍長    | GEN          |
-| 9   | 司令    | FM           |
-| 10  | 地雷    | MINE         |
+|-----|---------|--------------|  
+| -1  | 炸彈    | BOMB         |  
+| 0   | 軍旗    | FLAG         |  
+| 1   | 工兵    | ENG          |  
+| 2   | 排長    | LT           |  
+| 3   | 連長    | CPT          |  
+| 4   | 營長    | MAJ          |  
+| 5   | 團長    | COL          |  
+| 6   | 旅長    | BG           |  
+| 7   | 師長    | MG           |  
+| 8   | 軍長    | GEN          |  
+| 9   | 司令    | FM           |  
+| 10  | 地雷    | MINE         |  
 
 
 
