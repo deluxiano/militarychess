@@ -22,8 +22,8 @@ Each piece has a specific role and movement ability:
 - **Engineer**: Can destroy Landmines without being destroyed and move continuously on railroad tracks.
 - **Grenade**: Destroys itself along with any piece it attacks.
 - **Landmine**: Does not move; destroys any attacking piece except for the Engineer.
-- **Flag**: The game's objective; capturing the flag wins the game.
-| ID  | Chinese | English      |
+- **Flag**: The game's objective; capturing the flag wins the game.  
+| ID  | Chinese | English      |  
 |-----|---------|--------------|  
 | -1  | 炸彈    | BOMB         |  
 | 0   | 軍旗    | FLAG         |  
