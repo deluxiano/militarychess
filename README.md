@@ -52,5 +52,20 @@ Players alternate moves, maneuvering their pieces according to the rules specifi
 We did research on many similar board games in many different languages(programming language), translate by chatGPt and integrade beatiful code into our frame.
 
 ### Front end
-Mainly used react.js that we studied this semster, 
+Mainly used react.js that we studied this semster, used css and ejs together to create the UI. For js, we mainly have the structure under lib directory:
+-Board.js  
+Construct the game board, basic functionality before the game starts, like swap pieces and handle each move.  
+-Game.js  
+Game status, player info and get each move.  
+-GameStore.js  
+Generate game key.  
+-Graph.js  
+Handle chess piece positions on the board.  
+-Piece.js  
+Assign rank and color to pieces, a function to compare ranks  
+-RailroadNetwork.js  
+Railroad has complicated logic, define chess pieces' behaviors on railroad  
+
 ### Back end 
+-socket.io:  
+Socket.IO is a JavaScript library that enables real-time, bidirectional communication between web clients and servers, useful for applications like online games, chat apps, and live analytics. It works by establishing a persistent connection that can fall back to long polling if WebSockets are not supported, ensuring continuous data exchange. Socket.IO allows both client and server to emit and listen for events, facilitating real-time updates. Key features include auto-reconnection, binary support, and multiplexing, making it robust and versatile for various real-time applications. This library simplifies complex communication needs, ensuring applications remain responsive across different network conditions.
