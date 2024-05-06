@@ -52,7 +52,7 @@ Players alternate moves, maneuvering their pieces according to the rules specifi
 We did research on many similar board games in many different languages(programming language), translate by chatGPt and integrade beatiful code into our frame.
 
 ### Front end
-Mainly used react.js that we studied this semster, used css and ejs together to create the UI. For js, we mainly have the structure under lib directory:
+we mainly have the structure under lib directory:
 -Board.js  
 Construct the game board, basic functionality before the game starts, like swap pieces and handle each move.  
 -Game.js  
