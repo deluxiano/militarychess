@@ -6,6 +6,9 @@ Chinese military chess (Chinese: 陸戰棋) is a two-player Chinese board game .
 - **Players**: Two players compete against each other, each managing their own army set up on a distinctive battlefield represented on a board.
 - **Game Play**: Players take turns to move pieces with the aim to capture the opponent's flag or eliminate opposing pieces.
 
+## Demo Link:  
+[https://militarychessolin.onrender.com/](https://militarychessolin.onrender.com/)
+
 ## Components
 
 ### Board
