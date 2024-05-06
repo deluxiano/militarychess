@@ -48,3 +48,9 @@ Each player arranges their 25 pieces on their side of the board at the beginning
 
 Players alternate moves, maneuvering their pieces according to the rules specified for each type. The game continues until one player attacks the opponent's flag.
 
+## Technical details
+We did research on many similar board games in many different languages(programming language), translate by chatGPt and integrade beatiful code into our frame.
+
+### Front end
+Mainly used react.js that we studied this semster, 
+### Back end 
