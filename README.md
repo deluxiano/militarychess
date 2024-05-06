@@ -1,4 +1,4 @@
-# # Military Chess
+# Chinese Military Chess
 
 Chinese military chess (Chinese: 陸戰棋) is a two-player Chinese board game . It bears many similarities to L'Attaque. It is a non-perfect abstract strategy game of partial information, since each player has only limited knowledge concerning the disposition of the opposing pieces. 
 
@@ -38,6 +38,27 @@ Each piece has a specific role and movement ability:
 | 9   | 司令    | FM           |  
 | 10  | 地雷    | MINE         |  
 
+## Installing
+
+1. Clone the repository
+
+```
+git clone https://github.com/deluxiano/militarychess.git
+cd militarychess
+```
+
+2. Install dependencies
+
+```
+npm install
+```
+
+3. Start the server
+
+```
+npm run start
+```
+Access the server at http://localhost:3000.
 
 
 ## Setting Up
@@ -49,23 +70,49 @@ Each player arranges their 25 pieces on their side of the board at the beginning
 Players alternate moves, maneuvering their pieces according to the rules specified for each type. The game continues until one player attacks the opponent's flag.
 
 ## Technical details
-We did research on many similar board games in many different languages(programming language), translate by chatGPt and integrade beatiful code into our frame.
+We did research on many similar board games in many different languages (programming language), translate by ChatGPT and integrated beautiful code into our frame.
 
-### Front end
-Mainly used react.js that we studied this semster, used css and ejs together to create the UI. For js, we mainly have the structure under lib directory:
--Board.js  
-Construct the game board, basic functionality before the game starts, like swap pieces and handle each move.  
--Game.js  
-Game status, player info and get each move.  
--GameStore.js  
-Generate game key.  
--Graph.js  
-Handle chess piece positions on the board.  
--Piece.js  
-Assign rank and color to pieces, a function to compare ranks  
--RailroadNetwork.js  
-Railroad has complicated logic, define chess pieces' behaviors on railroad  
 
-### Back end 
--socket.io:  
-Socket.IO is a JavaScript library that enables real-time, bidirectional communication between web clients and servers, useful for applications like online games, chat apps, and live analytics. It works by establishing a persistent connection that can fall back to long polling if WebSockets are not supported, ensuring continuous data exchange. Socket.IO allows both client and server to emit and listen for events, facilitating real-time updates. Key features include auto-reconnection, binary support, and multiplexing, making it robust and versatile for various real-time applications. This library simplifies complex communication needs, ensuring applications remain responsive across different network conditions.
+### Frontend
+The front end was structured to provide a user interface, primarily using EJS templates and custom JavaScript to manage game logic and user interactions. While using full-on React was an option to us, we felt the frontend of the game did not require the advanced features and state management capabilities that React offers. Thus, EJS was used. 
+
+### Backend 
+- Nodejs: Provides a robust server-side platform that allows JavaScript to be used for backend development, ideal for handling I/O-bound operations, and capable of supporting thousands of simultaneous connection. 
+- Express: Minimal Node.js web application framework that provides a robust set of features. Used to create server-side logic and manage HTTP routes, middleware, and more. Used instead of Flask because it's better for games like this.
+- Socket.io: Facilitates instant communication between players and the server
+
+### Components
+Here’s a breakdown of the main components in the directory and their roles:
+
+- Board.js: This module constructs and initializes the game board. It handles pre-game functionalities such as setting up the pieces on the board, allowing players to swap pieces according to game rules, and processing each move made during the game.
+
+- Game.js: Manages the game's state, including tracking current player information, game status, and recording each move made. Essential for the flow of the game, ensuring that all game rules and progressions are adhered to.
+
+- GameStore.js: Responsible for generating unique game keys, crucial for session management, allows for the creation and tracking of individual game sessions in a multi-player environment.
+
+- Graph.js: Handles the logical positioning and possible movements of pieces on the board, important for validating legal moves and enforcing the game’s rules.
+
+- Piece.js: Assigns ranks and colors to the chess pieces and includes functionality to compare ranks during gameplay. Vital for the interaction between different pieces on the board, determining the outcome of conflicts.
+
+- RailroadNetwork.js: Given the unique aspects of the game, this module defines the behavior of pieces on the railroad tracks on the board, which involves more complex movement logic than typical path movements. 
+
+
+## API Endpoints
+1. Home Page (`GET /`): Renders the home page of the game where players can either start or join a game.
+
+2. Game Page (`GET /game/:id`): Validates the session to ensure the player is part of the game with the given ID. If validation fails, it redirects to the home page. If successful, it renders the game page for the player.
+
+3. Start Game (`POST /start`): Processes the "Start Game" form submission. It validates the input (player color and name), creates a new game session, and redirects to the game page if successful. If validation fails, it redirects back to the home page.
+
+4. Join Game (`POST /join`): Handles the "Join Game" form where a player can enter a game ID to join an existing game. It validates the game ID and player name, checks if the game exists, and assigns the player a color based on the available slots in the game session. Successful validation redirects to the game page; otherwise, it returns to the home page.
+
+
+## Acknowledgments
+We used the following resources to build the game:
+- ["I Made an Online Multiplayer Chess Game in an Hour, Using Node.js and Socket.io" (YouTube)](https://www.youtube.com/watch?v=71BWw_tNhbk)
+- [I Coded a Multiplayer Chess Game in React and Node.js](https://www.youtube.com/watch?v=QwUZxCBtfLw)
+- [VueChess](https://github.com/gustaYo/vue-chess)[ Luzhanqi_client (Github)](https://github.com/Tranxpotter/Luzhanqi_client), [react-stratego (Github)](https://github.com/LDK/react-stratego), [online-junqi (Github)](https://github.com/edwardli/Junqi), [ Chezz-Multiplyer-Chess
+](https://github.com/00xkhaled/Chezz-Multiplyer-Chess)
+- [How to Play Army Chess / Luzhanqi / 陸戰棋](https://www.ymimports.com/pages/how-to-play-luzhanqi)
+- [How to play the Chinese Land Battle Game
+Luzhanqi](https://ancientchess.com/page/play-luzhanqi.htm)
